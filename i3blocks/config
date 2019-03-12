@@ -1,0 +1,95 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+#separator_block_width=7
+align=cemter
+markup=pango
+separator=false
+
+# Memory usage
+
+[memory]
+label=
+command=$SCRIPT_DIR/memory/memory
+color=#E88939
+interval=30
+separator=true
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label=
+interval=10
+min_width=100.00%
+color=#E88939
+separator=true
+
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label= ROOT
+instance=/
+interval=30T:
+color=#6fb5f7
+separator=true
+
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label= HOME
+instance=/home
+color=#6fb5f7
+interval=30
+separator=true
+
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label= HDD
+instance=/hdd
+color=#6fb5f7
+interval=30
+separator=true
+
+[iface]
+command=$SCRIPT_DIR/iface/iface
+label=
+instance=wlp1s0f0u4
+color=#00FF00
+interval=10
+separator=true
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+#instance=wlp1s0f0u4
+interval=5
+color=#00F00
+separator=true
+
+# Date Time
+#
+[time]
+label=
+command=date '+%Y-%m-%d %H:%M:%S'
+color=#f9555f
+interval=5
